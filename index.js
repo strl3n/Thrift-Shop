@@ -10,7 +10,14 @@ app.use(express.json());
 
 // ==================================
 
+const userRouter = require("./src/routes/user.route")
+const itemRouter = require("./src/routes/item.route")
 
+
+
+
+app.use("api/user", userRouter);
+app.use("/api/item", itemRouter);
 
 
 // ==================================
