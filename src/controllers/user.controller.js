@@ -69,11 +69,24 @@ async function createUser(req, res){
 }
 
 async function loginUser(req, res){
-    
+    const shcema = Joi.object({
+        email: Joi.string().email().required().messages({
+            "string.email": "Email not valid",
+            "string.empty": "Email is required",
+            "any.required": "Email is required"
+        }),
+        password: Joi.string().min(6).required().messages({
+            "string.min": "Password at least 6 characters",
+            "string.empty": "Password is required",
+            "any.required": "Password is required"
+        })
+    })
 }
 
 async function updateUser(req, res){
+    const schema = Joi.object({
 
+    })
 }
 
 async function deleteUser(req, res){
